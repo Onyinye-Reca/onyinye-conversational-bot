@@ -9,8 +9,6 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 import connect from "./db/connect";
-import indexRouter from "./routes/index";
-import usersRouter from "./routes/users";
 import airlineRouter from "./routes/airlineRoute"
 import bookingRouter from "./routes/bookingRoute"
 
@@ -27,8 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+
 app.use("/airlines", airlineRouter)
 app.use("/bookings", bookingRouter)
 
